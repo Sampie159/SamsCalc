@@ -1,6 +1,5 @@
-#include <stdio.h>
+#include "calc.h"
 
-int main() {
-  printf("Hello World!\n");
-  return 0;
+int main(int argc, char *argv[]) {
+  return openWindow(argc, argv) ;
 }

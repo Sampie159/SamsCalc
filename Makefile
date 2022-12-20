@@ -129,6 +129,30 @@ samscalc/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/samscalc.dir/build.make CMakeFiles/samscalc.dir/build
 .PHONY : samscalc/fast
 
+src/calc.o: src/calc.c.o
+.PHONY : src/calc.o
+
+# target to build an object file
+src/calc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/samscalc.dir/build.make CMakeFiles/samscalc.dir/src/calc.c.o
+.PHONY : src/calc.c.o
+
+src/calc.i: src/calc.c.i
+.PHONY : src/calc.i
+
+# target to preprocess a source file
+src/calc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/samscalc.dir/build.make CMakeFiles/samscalc.dir/src/calc.c.i
+.PHONY : src/calc.c.i
+
+src/calc.s: src/calc.c.s
+.PHONY : src/calc.s
+
+# target to generate assembly for a file
+src/calc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/samscalc.dir/build.make CMakeFiles/samscalc.dir/src/calc.c.s
+.PHONY : src/calc.c.s
+
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... samscalc"
+	@echo "... src/calc.o"
+	@echo "... src/calc.i"
+	@echo "... src/calc.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

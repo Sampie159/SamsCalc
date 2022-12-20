@@ -59,3 +59,6 @@ cmake/
 *.txt
 CMakeFiles/
 *.json
+
+# Don't know where it comes from
+.cache/
