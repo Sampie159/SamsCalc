@@ -1,0 +1,1 @@
+/usr/bin/cc -Wall -Wextra CMakeFiles/samscalc.dir/src/calc.c.o CMakeFiles/samscalc.dir/src/main.c.o -o samscalc  -lm -lgtk-4 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdk_pixbuf-2.0 -lcairo-gobject -lcairo -lgraphene-1.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 

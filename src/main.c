@@ -1,5 +1,5 @@
-#include "calc.h"
+#include "calcgui.h"
 
 int main(int argc, char *argv[]) {
-  return openWindow(argc, argv) ;
+  return openWindow(argc, argv); // Initiates the calculator.
 }

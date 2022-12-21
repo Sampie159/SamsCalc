@@ -52,13 +52,5 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# CMake files
-*.cmake
-.cmake/
-cmake/
-*.txt
-CMakeFiles/
-*.json
-
 # Don't know where it comes from
 .cache/

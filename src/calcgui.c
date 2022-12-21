@@ -1,5 +1,10 @@
-#include "calc.h"
+#include "calcgui.h"
+#include <gtk/gtk.h>
 
+#define WIDTH 400
+#define HEIGHT 600
+
+// Builds the Main Window for the calculator.
 static void activate(GtkApplication *app) {
   GtkWidget *window = gtk_application_window_new(app);
   gtk_window_set_title(GTK_WINDOW(window), "Sam's Calc");

@@ -1,0 +1,3 @@
+/home/sampie/projects/SamsCalc/CMakeFiles/samscalc.dir
+/home/sampie/projects/SamsCalc/CMakeFiles/edit_cache.dir
+/home/sampie/projects/SamsCalc/CMakeFiles/rebuild_cache.dir
