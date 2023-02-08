@@ -7,6 +7,9 @@
 *.obj
 *.elf
 
+# Object folder
+obj/
+
 # Linker output
 *.ilk
 *.map
