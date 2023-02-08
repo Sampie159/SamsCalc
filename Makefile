@@ -16,6 +16,9 @@ OBJS = $(patsubst $(SRCDIR)%.c, $(OBJDIR)%.o, $(SRCS))
 SRCDIR = src/
 SRCS = $(wildcard $(SRCDIR)*.c)
 
+TESTDIR = tests/
+TESTS = $(wildcard $(TESTDIR)*.c)
+
 all: samscalc
 
 release: CFLAGS = $(shell $(PKGCONFIG) --cflags gtk4) -Wall -Wextra -O2 -pipe -march=native -DNDEBUG
@@ -23,10 +26,13 @@ release: clean
 release: samscalc
 
 samscalc: $(OBJS)
-	$(CC) $(CFLAGS) $(LIBS) $^ -o $@
+	$(CC) $(CFLAGS) $(LIBS) $^ -o $@ -lm
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	$(CC) $(CFLAGS) $(AUX) -c $< -o $@
+
+$(TESTEDIR)/bin/%: $(TESTEDIR)%.c
+	$(CC) $(CFLAGS) $(AUX) $< -o $@ -lcriterion
 
 clean:
 	rm -f $(OBJDIR)* samscalc
