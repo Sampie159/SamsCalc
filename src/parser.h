@@ -1,14 +1,23 @@
 #ifndef PARSER_H_
 #define PARSER_H_
 
-enum Operator { ADD = '+', SUB = '-', MUL = '*', DIV = '/' };
-enum Separator { EXP_BEGIN = '(', EXP_END = ')', WHITESPACE = ' ' };
+#include <stddef.h>
+typedef enum _TokenKind {
+  FIM = 0,
+  ADD = '+',
+  SUB = '-',
+  MUL = '*',
+  DIV = '/',
+  EXP_BEGIN = '(',
+  EXP_END = ')',
+  WHITESPACE = ' ',
+  NUMBER
+} TokenKind;
 
-typedef enum Operator Operator;
-typedef enum Separator Separator;
-
-typedef struct _Parser {
-  char *buffer;
-} Parser;
+typedef struct _Token {
+  TokenKind kind;
+  const char *text;
+  size_t textLen;
+} Token;
 
 #endif // PARSER_H_

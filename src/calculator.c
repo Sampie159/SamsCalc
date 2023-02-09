@@ -1,8 +1,8 @@
 #include "parser.h"
-#include "pile.h"
+#include "tree.h"
 #include <stdlib.h>
 
-double solveOperation(Operation *op) {
+inline double solveOperation(Operation *op) {
   double result;
   switch (op->operation) {
   case ADD:
@@ -31,16 +31,21 @@ double solveOperation(Operation *op) {
   }
 }
 
-inline double solveCurrentNode(PileOperations *po) {
+static inline double solveCurrentNode(TreeOperations *po) {
   double result = solveOperation(po->op);
   free(po);
   return result;
 }
 
-double solvePileOperations(PileOperations *po) {
-  if (po->next == NULL) {
+double solveTreeOperations(TreeOperations *po) {
+  if (po->leftNode == NULL && po->rightNode == NULL)
     return solveCurrentNode(po);
-  }
-  po->op->arg2 = solvePileOperations(po->next);
+
+  if (po->leftNode != NULL)
+    po->op->arg1 = solveTreeOperations(po->leftNode);
+
+  if (po->rightNode != NULL)
+    po->op->arg2 = solveTreeOperations(po->rightNode);
+
   return solveCurrentNode(po);
 }

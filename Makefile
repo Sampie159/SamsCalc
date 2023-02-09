@@ -6,9 +6,9 @@
 
 CC = gcc
 PKGCONFIG = $(shell which pkg-config)
-CFLAGS = 	-g -Wall -Wextra
-LIBS =		$(shell $(PKGCONFIG) --libs gtk4)
-AUX	=		$(shell $(PKGCONFIG) --cflags gtk4)
+CFLAGS = -g -Wall -Wextra -std=c11
+LIBS = $(shell $(PKGCONFIG) --libs gtk4)
+AUX = $(shell $(PKGCONFIG) --cflags gtk4)
 
 OBJDIR = obj/
 OBJS = $(patsubst $(SRCDIR)%.c, $(OBJDIR)%.o, $(SRCS))
@@ -21,7 +21,7 @@ TESTS = $(wildcard $(TESTDIR)*.c)
 
 all: samscalc
 
-release: CFLAGS = $(shell $(PKGCONFIG) --cflags gtk4) -Wall -Wextra -O2 -pipe -march=native -DNDEBUG
+release: CFLAGS = $(shell $(PKGCONFIG) --cflags gtk4) -std=c11 -Wall -Wextra -O2 -pipe -march=native -DNDEBUG
 release: clean
 release: samscalc
 
