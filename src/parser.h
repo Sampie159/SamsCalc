@@ -1,7 +1,9 @@
 #ifndef PARSER_H_
 #define PARSER_H_
 
+#include "tree.h"
 #include <stddef.h>
+
 typedef enum _TokenKind {
   FIM = 0,
   ADD = '+',
@@ -19,5 +21,7 @@ typedef struct _Token {
   const char *text;
   size_t textLen;
 } Token;
+
+TreeOperations *beginParse(char *);
 
 #endif // PARSER_H_
