@@ -5,18 +5,18 @@
 
 typedef double (*operationFunc)(double, double);
 
-double add(double a, double b) { return a + b; }
-double sub(double a, double b) { return a - b; }
-double mul(double a, double b) { return a * b; }
-double divide(double a, double b) { return a / b; }
+static inline double add(double a, double b) { return a + b; }
+static inline double sub(double a, double b) { return a - b; }
+static inline double mul(double a, double b) { return a * b; }
+static inline double divide(double a, double b) { return a / b; }
 
-double operation(operationFunc func, Operation *op) {
+static inline double operation(operationFunc func, Operation *op) {
   double result = func(op->arg1, op->arg2);
   free(op);
   return result;
 }
 
-inline double solveOperation(Operation *op) {
+static inline double solveOperation(Operation *op) {
   switch (op->operation) {
   case ADD:
     return operation(add, op);
