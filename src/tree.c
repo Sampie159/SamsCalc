@@ -3,6 +3,8 @@
 
 TreeOperations *newTree() {
   TreeOperations *to = (TreeOperations *)malloc(sizeof(TreeOperations *));
+  to->leftNode = NULL;
+  to->rightNode = NULL;
   return to;
 }
 

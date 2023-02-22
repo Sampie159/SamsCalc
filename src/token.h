@@ -21,4 +21,12 @@ typedef struct _Token {
   size_t textLen;
 } Token;
 
+typedef struct _TokenList {
+  Token *token;
+  struct _TokenList *next;
+} TokenList;
+
+Token *newToken(TokenKind, const char *);
+TokenList *newTokenList();
+
 #endif // TOKEN_H_
